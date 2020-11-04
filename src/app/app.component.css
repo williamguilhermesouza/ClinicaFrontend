@@ -1,0 +1,18 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.app img {
+    align-self: center;
+}
+
+.app input {
+    width: 380px;
+    align-self: center;
+    margin-left: -15px;
+    margin-top: -40px;
+}
