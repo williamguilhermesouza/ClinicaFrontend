@@ -1,5 +1,20 @@
-p {
+nav {
     position: absolute;
-    top: 0px;
+    top: 5px;
     right: 20px;
+}
+
+nav a {
+    margin-left: 10px;
+    text-decoration: none;
+    text-shadow: 2px;
+    transition: 2s;
+}
+
+nav a:hover {
+    color: #777;
+}
+
+nav a:visited {
+    color: #000;
 }
