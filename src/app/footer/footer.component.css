@@ -1,5 +1,5 @@
 p {
-    position: absolute;
+    position: sticky;
     left: 20px;
     bottom: 10px;
 }

@@ -1,0 +1,64 @@
+.new {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.new .name input {
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.email input {
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#email {
+    width: 350px;
+}
+
+#address {
+    width: 400px;
+}
+
+.new .date {
+    margin: 10px 0 10px 0;
+}
+
+.date input {
+    margin: 0 10px 0 10px;
+    border-radius: 10px;
+}
+
+#weight, #height {
+    width: 50px;
+}
+
+.complaints {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+}
+
+.complaints textarea {
+    border-radius: 10px;
+    height: 100px;
+}
+
+.measure input {
+    margin: 20px 10px 10px 20px;
+    border-radius: 10px;
+    width: 50px;
+}
+
+#obs {
+    border-radius: 10px;
+    height: 100px;
+    width: 900px;
+}
+
+
+
+
