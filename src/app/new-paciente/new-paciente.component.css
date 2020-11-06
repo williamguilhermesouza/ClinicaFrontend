@@ -10,6 +10,11 @@
     border-radius: 10px;
 }
 
+.new .name #sex {
+    width: 20px;
+    border-radius: 5px;
+}
+
 .email input {
     margin: 10px;
     border-radius: 10px;
