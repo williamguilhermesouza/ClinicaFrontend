@@ -1,0 +1,18 @@
+.all-pacientes {
+    display: flex;
+    margin: 250px;
+}
+
+.pacientes-table {
+    border: 1px solid black;
+    width: 100%;
+    text-align: center;
+}
+
+.header-cell {
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+}
