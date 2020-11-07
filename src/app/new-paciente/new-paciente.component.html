@@ -1,40 +1,40 @@
-<div class="new">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" class="new" >
     <div class="name">
-        <label for="name">Nome:</label><input type="text" id="name"/>
-        Sexo: <input type="text" id="sex" />
-        Estado Civil: <input type="text" />
+        <label for="name">Nome:</label><input type="text" id="name" name="name" ngModel/>
+        Sexo: <input type="text" id="sex" name="sex" ngModel/>
+        Estado Civil: <input type="text" name="ecivil" ngModel/>
     </div>
     <div class="email">
-        <label for="email">E-mail</label><input type="email" id="email"/>
-        <label for="address">Endereço</label><input type="text" id="address"/>
+        <label for="email">E-mail</label><input type="email" id="email" name="email" ngModel/>
+        <label for="address">Endereço</label><input type="text" id="address" name="address" ngModel/>
     </div>
     <div class="date">
-        <label for="date">Data de Nascimento:</label><input type="date" id="date"/>
-        <label for="occupation">Profissão:</label><input type="text" id="occupation"/>
-        <label for="phone">Telefone:</label><input type="phone" id="phone"/>
-        <label for="weight">Peso:</label><input type="number" id="weight"/>
-        <label for ="height">Altura:</label><input type="number" id="height"/>
+        <label for="date">Data de Nascimento:</label><input type="date" id="date" name="date" ngModel/>
+        <label for="occupation">Profissão:</label><input type="text" id="occupation" name="occ" ngModel/>
+        <label for="phone">Telefone:</label><input type="phone" id="phone" name="phone" ngModel/>
+        <label for="weight">Peso:</label><input type="number" id="weight" name="weight" ngModel/>
+        <label for ="height">Altura:</label><input type="number" id="height" name="height" ngModel/>
     </div>
     <div class="complaints">
-        <label for="complain">Queixa:</label><textarea type="text" id="complain"></textarea>
-        <label for="current">Doença atual:</label><textarea type="text" id="current"></textarea>
-        <label for="pre">Doença Pre:</label><textarea type="text" id="pre"></textarea>
-        <label for="associate">Doença Assoc:</label><textarea type="text" id="associate"></textarea>
-        <label for="history">História:</label><textarea type="text" id="history"></textarea>
-        <label for="habits">Hábitos:</label><textarea type="text" id="habits"></textarea>
-        <label for="medicine">Medicações:</label><textarea type="text" id="medicine"></textarea>
-        <label for="state">Estado:</label><textarea type="text" id="state"></textarea>
+        <label for="complain">Queixa:</label><textarea type="text" id="complain" name="complain" ngModel></textarea>
+        <label for="current">Doença atual:</label><textarea type="text" id="current" name="current" ngModel></textarea>
+        <label for="pre">Doença Pre:</label><textarea type="text" id="pre" name="pre" ngModel></textarea>
+        <label for="associate">Doença Assoc:</label><textarea type="text" id="associate" name="assoc" ngModel></textarea>
+        <label for="history">História:</label><textarea type="text" id="history" name="history" ngModel></textarea>
+        <label for="habits">Hábitos:</label><textarea type="text" id="habits" name="habits" ngModel></textarea>
+        <label for="medicine">Medicações:</label><textarea type="text" id="medicine" name="med" ngModel></textarea>
+        <label for="state">Estado:</label><textarea type="text" id="state" name="state" ngModel></textarea>
     </div>
     <div class="measure">
-        <label for="pa">PA:</label><input type="number" id="pa"/>
-        <label for="fc">FC:</label><input type="number" id="fc"/>
-        <label for="fr">FR:</label><input type="number" id="fr"/>
-        <label for="sp">SPO2:</label><input type="number" id="sp"/>
+        <label for="pa">PA:</label><input type="number" id="pa" name="pa" ngModel/>
+        <label for="fc">FC:</label><input type="number" id="fc" name="fc" ngModel/>
+        <label for="fr">FR:</label><input type="number" id="fr" name="fr" ngModel/>
+        <label for="sp">SPO2:</label><input type="number" id="sp" name="sp" ngModel/>
         <br />
-        <label for="obs">Observação:</label><br /><textarea type="text" id="obs"></textarea>
+        <label for="obs">Observação:</label><br /><textarea type="text" id="obs" name="obs" ngModel></textarea>
     </div>
     <div class="buttons">
-        <button id="btn-save">Salvar</button>
+        <button type="submit" id="btn-save">Salvar</button>
         <button id="btn-clean">Limpar</button>
     </div>
-</div>
+</form>

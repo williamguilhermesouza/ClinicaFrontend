@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NewPacienteComponent } from './new-paciente/new-paciente.component';
 import { AllPacientesComponent } from './all-pacientes/all-pacientes.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -21,6 +23,7 @@ import { AllPacientesComponent } from './all-pacientes/all-pacientes.component';
 
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent },
       {path: 'new', component: NewPacienteComponent },
