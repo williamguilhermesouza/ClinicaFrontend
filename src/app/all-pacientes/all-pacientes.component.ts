@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import api from '../../services/api.service';
 
 @Component({
   selector: 'app-all-pacientes',
@@ -9,7 +10,9 @@ export class AllPacientesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    const response = await api.get('/pacientes');
+
   }
 
 }
