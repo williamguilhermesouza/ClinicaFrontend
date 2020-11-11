@@ -10,7 +10,6 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NewPacienteComponent } from './new-paciente/new-paciente.component';
 import { AllPacientesComponent } from './all-pacientes/all-pacientes.component';
-import { PacientesService } from 'src/services/pacientes.service';
 
 
 
@@ -34,7 +33,7 @@ import { PacientesService } from 'src/services/pacientes.service';
     ]),
     
   ],
-  providers: [PacientesService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { PacientesService } from 'src/services/pacientes.service';
+import PacientesService from 'src/services/pacientes.service';
 import { Paciente } from '../../models/paciente.model';
 
 @Component({
@@ -9,10 +8,14 @@ import { Paciente } from '../../models/paciente.model';
   styleUrls: ['./all-pacientes.component.css']
 })
 export class AllPacientesComponent implements OnInit {
-  pacientes: Observable<Paciente[]>;
+  pacientes: Paciente[];
 
-  constructor(private pacientesService: PacientesService) {
-    this.pacientes = this.pacientesService.getAll();
+  setPacientes(data) {
+    this.pacientes = data;
+  }
+
+  constructor() {
+    PacientesService.get('/pacientes').then(res => this.setPacientes(res.data));
    }
 
   async ngOnInit() {
