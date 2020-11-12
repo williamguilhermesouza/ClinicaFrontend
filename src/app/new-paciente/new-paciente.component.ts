@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import PacientesService from 'src/services/pacientes.service';
+
 
 @Component({
   selector: 'app-new-paciente',
@@ -13,7 +15,9 @@ export class NewPacienteComponent implements OnInit {
   }
 
   onSubmit(form) {
-    console.log(form);
+    let paciente = form.value;
+    PacientesService.post('/pacientes/create', paciente).then(res => console.log(res.data));
+    alert(`Paciente ${paciente.nome} Cadastrado com id ${paciente.id}`);
   }
   
 

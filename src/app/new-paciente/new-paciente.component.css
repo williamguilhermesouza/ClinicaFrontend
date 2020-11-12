@@ -10,6 +10,10 @@
     border-radius: 10px;
 }
 
+#ID {
+    width: 50px;
+}
+
 .new .name #sex {
     width: 20px;
     border-radius: 5px;
