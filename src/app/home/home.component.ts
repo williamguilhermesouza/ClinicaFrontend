@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(paciente) {
-    PacientesService.post('/pacientes/searchbyname', {nome: paciente}).then(res => console.log(res));
+    PacientesService.post('/pacientes/findbyname', {nome: paciente}).then(res => console.log(res.data));
   }
 
 }
