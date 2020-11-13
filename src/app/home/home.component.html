@@ -1,5 +1,8 @@
 <div class="app">
-    <img src="../assets/bemestar_logo.jpeg" />
-    <input type="text" id="pacienteSearch" />
+    <img src="../assets/bemestar_logo.jpeg" id="logo"/>
+    <div class="search-box">
+        <input type="text" id="pacienteSearch" #paciente (keydown.enter)="onSubmit(paciente.value)" />
+        <button (click)="onSubmit(paciente.value)"><img src="../assets/search.png" id="search"/></button>
+    </div>
 </div>
 
