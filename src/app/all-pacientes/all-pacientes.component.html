@@ -14,8 +14,8 @@
             <td>{{paciente.sexo}}</td>
             <td>{{paciente.telefone}}</td>
             <td>{{paciente.nascimento}}</td>
-            <td><a href="#">Editar</a></td>
-            <td><a href="#">Excluir</a></td>
+            <td><button (click)=updatePaciente(paciente.id)>Editar</button></td>
+            <td><button (click)="pacienteDelete(paciente.id)">Deletar</button></td>
         </tr>
         
     </table>

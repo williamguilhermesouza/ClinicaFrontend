@@ -9,9 +9,20 @@ import { Paciente } from '../../models/paciente.model';
 })
 export class AllPacientesComponent implements OnInit {
   pacientes: Paciente[];
-
+  
   setPacientes(data) {
     this.pacientes = data;
+  }
+
+  pacienteDelete(id) {
+    PacientesService.delete(`/pacientes/${id}`);
+    alert(`Paciente ${id} deletado.`);
+  }
+
+  async updatePaciente(id) {
+    let res = await PacientesService.get(`/pacientes/${id}`);
+    let paciente = res.data;
+    console.log(paciente);
   }
 
   constructor() {
