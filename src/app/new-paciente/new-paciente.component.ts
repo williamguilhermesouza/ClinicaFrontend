@@ -39,8 +39,8 @@ export class NewPacienteComponent implements OnInit {
   ) {
     let state = this.router.getCurrentNavigation().extras.state;
     if (state) {
-      console.log(state[0]);
-      let paciente = state[0];
+      console.log(state);
+      let paciente = state;
       this.ID = paciente.id;
       this.nome = paciente.nome;
       this.sexo = paciente.sexo;

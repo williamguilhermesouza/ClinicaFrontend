@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import PacientesService from 'src/services/pacientes.service';
 import { Paciente } from '../../models/paciente.model';
 
@@ -22,10 +23,12 @@ export class AllPacientesComponent implements OnInit {
   async updatePaciente(id) {
     let res = await PacientesService.get(`/pacientes/${id}`);
     let paciente = res.data;
-    console.log(paciente);
+    this.router.navigateByUrl('/new', { state: paciente });
   }
 
-  constructor() {
+  constructor(
+    private router: Router,
+  ) {
     PacientesService.get('/pacientes').then(res => this.setPacientes(res.data));
    }
 
