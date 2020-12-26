@@ -20,7 +20,11 @@ export class HomeComponent implements OnInit {
   async onSubmit(paciente) {
     let pacienteData;
     await PacientesService.post('/pacientes/findbyname', {nome: paciente}).then(res => {pacienteData = res.data});
-    this.router.navigateByUrl('/new', { state: pacienteData[0]});
+    if (pacienteData[0]) {
+        this.router.navigateByUrl('/new', { state: pacienteData[0]});
+    } else {
+        alert(`Paciente ${paciente} não encontrado!`);
+    };
   }
 
 }
