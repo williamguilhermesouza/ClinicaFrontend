@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import PacientesService from 'src/services/pacientes.service';
 

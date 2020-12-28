@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NewPacienteComponent } from './new-paciente/new-paciente.component';
 import { AllPacientesComponent } from './all-pacientes/all-pacientes.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -31,6 +32,7 @@ import { AllPacientesComponent } from './all-pacientes/all-pacientes.component';
     { path: 'new', component: NewPacienteComponent },
     { path: 'all', component: AllPacientesComponent },
 ], { relativeLinkResolution: 'legacy' }),
+    BrowserAnimationsModule,
     
   ],
   providers: [],
