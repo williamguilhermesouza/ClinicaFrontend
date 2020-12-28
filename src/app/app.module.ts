@@ -27,10 +27,10 @@ import { AllPacientesComponent } from './all-pacientes/all-pacientes.component';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: '', component: HomeComponent },
-      {path: 'new', component: NewPacienteComponent },
-      {path: 'all', component: AllPacientesComponent },
-    ]),
+    { path: '', component: HomeComponent },
+    { path: 'new', component: NewPacienteComponent },
+    { path: 'all', component: AllPacientesComponent },
+], { relativeLinkResolution: 'legacy' }),
     
   ],
   providers: [],
