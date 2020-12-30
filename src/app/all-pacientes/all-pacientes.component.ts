@@ -10,19 +10,19 @@ import { Paciente } from '../../models/paciente.model';
 })
 export class AllPacientesComponent implements OnInit {
   pacientes: Paciente[];
-  
-  setPacientes(data) {
+
+  setPacientes(data: any): void {
     this.pacientes = data;
   }
 
-  pacienteDelete(id) {
+  pacienteDelete(id: number): void {
     PacientesService.delete(`/pacientes/${id}`);
     alert(`Paciente ${id} deletado.`);
   }
 
-  async updatePaciente(id) {
-    let res = await PacientesService.get(`/pacientes/${id}`);
-    let paciente = res.data;
+  async updatePaciente(id: number): Promise<void> {
+    const res = await PacientesService.get(`/pacientes/${id}`);
+    const paciente = res.data;
     this.router.navigateByUrl('/new', { state: paciente });
   }
 
@@ -32,7 +32,7 @@ export class AllPacientesComponent implements OnInit {
     PacientesService.get('/pacientes').then(res => this.setPacientes(res.data));
    }
 
-  async ngOnInit() {
+  ngOnInit(): void {
 
   }
 
