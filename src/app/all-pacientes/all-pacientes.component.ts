@@ -33,7 +33,7 @@ export class AllPacientesComponent implements OnInit {
         const pacientes: any = res.data;
         for (const paciente of pacientes) {
             const nascimento = new Date(paciente.nascimento);
-            paciente.nascimento = `${nascimento.getDay()}/${nascimento.getMonth()}/${nascimento.getFullYear()}`;
+            paciente.nascimento = `${nascimento.getDate() + 1}/${nascimento.getMonth() + 1}/${nascimento.getFullYear()}`;
         }
         this.setPacientes(pacientes);
     });
