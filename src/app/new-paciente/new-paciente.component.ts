@@ -37,17 +37,18 @@ export class NewPacienteComponent implements OnInit {
   constructor(
     private router: Router,
   ) {
-    let state = this.router.getCurrentNavigation().extras.state;
+    const state = this.router.getCurrentNavigation().extras.state;
     if (state) {
       console.log(state);
-      let paciente = state;
+      const paciente = state;
       this.ID = paciente.id;
       this.nome = paciente.nome;
       this.sexo = paciente.sexo;
       this.estadocivil = paciente.estadocivil;
       this.email = paciente.email;
       this.endereco = paciente.endereco;
-      this.nascimento = paciente.nascimento;
+      const date = new Date(paciente.nascimento);
+      this.nascimento = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate() + 1 }`;
       this.profissao = paciente.profissao;
       this.telefone = paciente.telefone;
       this.peso = paciente.peso;
@@ -66,18 +67,15 @@ export class NewPacienteComponent implements OnInit {
       this.sp = paciente.sp;
       this.observacao = paciente.observacao;
     }
-    
    }
 
   ngOnInit(): void {
-    
   }
 
-  onSubmit(form) {
-    let paciente = form.value;
+  onSubmit(form: any): void {
+    const paciente = form.value;
     PacientesService.post('/pacientes/create', paciente).then(res => console.log(res.data));
     alert(`Paciente ${paciente.nome} Cadastrado com id ${paciente.id}`);
   }
-  
 
 }
