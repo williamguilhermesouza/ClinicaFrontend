@@ -6,7 +6,13 @@
             id="pacienteSearch" 
             #paciente 
             (keydown.enter)="onSubmit(paciente.value)" 
+            [matAutocomplete]="auto"
         />
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of options" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
 
         <button (click)="onSubmit(paciente.value)" (keydown.enter)="onSubmit(paciente.value)"><img src="../assets/search.png" id="search"/></button>
     </div>

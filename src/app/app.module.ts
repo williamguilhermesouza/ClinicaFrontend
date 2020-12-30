@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatAutocomplete, MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -12,11 +12,12 @@ import { HomeComponent } from './home/home.component';
 import { NewPacienteComponent } from './new-paciente/new-paciente.component';
 import { AllPacientesComponent } from './all-pacientes/all-pacientes.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HomeModule} from './home/home.module';
 
 
 
 @NgModule({
-  declarations: [
+   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -27,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     FormsModule,
+    HomeModule,
     HttpClientModule,
     RouterModule.forRoot([
     { path: '', component: HomeComponent },
@@ -34,7 +36,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     { path: 'all', component: AllPacientesComponent },
 ], { relativeLinkResolution: 'legacy' }),
     BrowserAnimationsModule,
-    MatAutocompleteModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

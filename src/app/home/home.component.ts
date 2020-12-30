@@ -9,6 +9,7 @@ import PacientesService from 'src/services/pacientes.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  options: string[] = ['One', 'Two', 'Three'];
 
   constructor(
     private router: Router,
