@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import PacientesService from 'src/services/pacientes.service';
 
@@ -18,14 +17,14 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async onSubmit(paciente) {
-    let pacienteData;
-    await PacientesService.post('/pacientes/findbyname', {nome: paciente}).then(res => {pacienteData = res.data});
+  async onSubmit(paciente: any): Promise<any> {
+    let pacienteData: any;
+    await PacientesService.post('/pacientes/findbyname', {nome: paciente}).then(res => {pacienteData = res.data; });
     if (pacienteData[0]) {
         this.router.navigateByUrl('/new', { state: pacienteData[0]});
     } else {
         alert(`Paciente ${paciente} não encontrado!`);
-    };
+    }
   }
 
 }

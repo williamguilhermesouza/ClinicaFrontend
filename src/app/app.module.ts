@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -33,7 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     { path: 'all', component: AllPacientesComponent },
 ], { relativeLinkResolution: 'legacy' }),
     BrowserAnimationsModule,
-    
+    MatAutocompleteModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
