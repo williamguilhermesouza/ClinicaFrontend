@@ -34,8 +34,10 @@ export class HomeComponent implements OnInit {
       this.options = [];
       if (pacienteData) {
           for (let i = 0; i <= pacienteData.length; i++) {
-              if (pacienteData[i].nome.includes(paciente)) {
-                this.options = [...this.options, pacienteData[i].nome];
+              if (pacienteData[i]) {
+                  if (pacienteData[i].nome.includes(paciente)) {
+                    this.options = [...this.options, pacienteData[i].nome];
+                  }
               }
           }
       }
