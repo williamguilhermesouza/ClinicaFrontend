@@ -9,7 +9,7 @@ import PacientesService from 'src/services/pacientes.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  options: string[] = ['One', 'Two', 'Three'];
+  options: string[] = [];
 
   constructor(
     private router: Router,
@@ -18,14 +18,27 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async onSubmit(paciente: any): Promise<any> {
-    let pacienteData: any;
-    await PacientesService.post('/pacientes/findbyname', {nome: paciente}).then(res => {pacienteData = res.data; });
-    if (pacienteData[0]) {
-        this.router.navigateByUrl('/new', { state: pacienteData[0]});
-    } else {
-        alert(`Paciente ${paciente} não encontrado!`);
-    }
+  async onSubmit(paciente: string): Promise<any> {
+      let pacienteData: any;
+      await PacientesService.post('/pacientes/findbyname', {nome: paciente}).then(res => {pacienteData = res.data; });
+      if (pacienteData[0]) {
+          this.router.navigateByUrl('/new', { state: pacienteData[0]});
+      } else {
+          alert(`Paciente ${paciente} não encontrado!`);
+      }
   }
 
+  async onPress(paciente: string): Promise<any> {
+      let pacienteData: any;
+      await PacientesService.get('/pacientes').then(res => {pacienteData = res.data; });
+      this.options = [];
+      for (let i = 0; i <= pacienteData.length; i++) {
+          if (pacienteData[i].nome.includes(paciente)) {
+            this.options = [...this.options, pacienteData[i].nome];
+          }
+      }
+   }
+
+
 }
+

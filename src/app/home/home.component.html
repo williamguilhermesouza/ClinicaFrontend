@@ -6,6 +6,7 @@
             id="pacienteSearch" 
             #paciente 
             (keydown.enter)="onSubmit(paciente.value)" 
+            (keydown)="onPress(paciente.value)"
             [matAutocomplete]="auto"
         />
         <mat-autocomplete #auto="matAutocomplete">
