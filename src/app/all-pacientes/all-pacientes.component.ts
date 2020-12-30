@@ -30,8 +30,12 @@ export class AllPacientesComponent implements OnInit {
     private router: Router,
   ) {
     PacientesService.get('/pacientes').then(res => {
-        let data: any = res.data;
-        this.setPacientes(data);
+        const pacientes: any = res.data;
+        for (const paciente of pacientes) {
+            const nascimento = new Date(paciente.nascimento);
+            paciente.nascimento = `${nascimento.getDay()}/${nascimento.getMonth()}/${nascimento.getFullYear()}`;
+        }
+        this.setPacientes(pacientes);
     });
    }
 
