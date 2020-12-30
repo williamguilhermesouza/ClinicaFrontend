@@ -29,7 +29,10 @@ export class AllPacientesComponent implements OnInit {
   constructor(
     private router: Router,
   ) {
-    PacientesService.get('/pacientes').then(res => this.setPacientes(res.data));
+    PacientesService.get('/pacientes').then(res => {
+        let data: any = res.data;
+        this.setPacientes(data);
+    });
    }
 
   ngOnInit(): void {

@@ -32,9 +32,11 @@ export class HomeComponent implements OnInit {
       let pacienteData: any;
       await PacientesService.get('/pacientes').then(res => {pacienteData = res.data; });
       this.options = [];
-      for (let i = 0; i <= pacienteData.length; i++) {
-          if (pacienteData[i].nome.includes(paciente)) {
-            this.options = [...this.options, pacienteData[i].nome];
+      if (pacienteData) {
+          for (let i = 0; i <= pacienteData.length; i++) {
+              if (pacienteData[i].nome.includes(paciente)) {
+                this.options = [...this.options, pacienteData[i].nome];
+              }
           }
       }
    }
