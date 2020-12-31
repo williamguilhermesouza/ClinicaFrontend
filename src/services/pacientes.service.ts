@@ -1,7 +1,14 @@
-import axios from 'axios';
+import { Injectable } from '@angular/core';
+import { HttpClient} from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
-const PacientesService = axios.create({
-    baseURL: 'http://localhost:3000',
-});
+import { Paciente } from '../models/paciente.model';
 
-export default PacientesService;
+@Injectable({
+  providedIn: 'root'
+})
+export class PacientesService {
+  private readonly Backend = `${environment.Backend}`;
+
+  constructor() { }
+}
