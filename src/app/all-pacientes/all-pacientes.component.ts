@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { Observable } from 'rxjs';
 import { PacientesService } from 'src/services/pacientes.service';
 import { Paciente } from '../../models/paciente.model';
 
@@ -9,35 +11,26 @@ import { Paciente } from '../../models/paciente.model';
   styleUrls: ['./all-pacientes.component.css']
 })
 export class AllPacientesComponent implements OnInit {
-  pacientes: Paciente[];
+  pacientes$: Observable<Paciente[]>;
 
-  setPacientes(data: any): void {
-    this.pacientes = data;
-  }
 
   pacienteDelete(id: number): void {
-//    PacientesService.delete(`/pacientes/${id}`);
+    this.pacientesService.deletePaciente(id);
     alert(`Paciente ${id} deletado.`);
   }
 
-  async updatePaciente(id: number): Promise<void> {
-//    const res = await PacientesService.get(`/pacientes/${id}`);
-//    const paciente = res.data;
-//    this.router.navigateByUrl('/new', { state: paciente });
+  updatePaciente(id: number): void {
+    this.pacientesService.updatePaciente(id).subscribe( paciente => {
+        const date = new Date(paciente.nascimento);
+        paciente.nascimento = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+        this.router.navigateByUrl('/new', {state: paciente });
+    });
   }
 
   constructor(
     private router: Router,
-  ) {
-  //  PacientesService.get('/pacientes').then(res => {
-  //      const pacientes: any = res.data;
-  //      for (const paciente of pacientes) {
-  //          const nascimento = new Date(paciente.nascimento);
-  //          paciente.nascimento = `${nascimento.getDate() + 1}/${nascimento.getMonth() + 1}/${nascimento.getFullYear()}`;
-  //      }
-  //      this.setPacientes(pacientes);
-  //  });
-   }
+    private pacientesService: PacientesService,
+  ) { this.pacientes$ = this.pacientesService.getPacientes(); }
 
   ngOnInit(): void {
 

@@ -8,12 +8,12 @@
             <th class="header-cell">Nascimento</th>
             <th class="header-cell"colspan="2">Excluir Todos</th>
         </tr>
-        <tr *ngFor="let paciente of pacientes">
+        <tr *ngFor="let paciente of pacientes$ | async">
             <td>{{paciente.id}}</td>
             <td>{{paciente.nome}}</td>
             <td>{{paciente.sexo}}</td>
             <td>{{paciente.telefone}}</td>
-            <td>{{paciente.nascimento}}</td>
+            <td>{{paciente.nascimento | date: 'd/M/yyyy' }}</td>
             <td><button (click)=updatePaciente(paciente.id)>Editar</button></td>
             <td><button (click)="pacienteDelete(paciente.id)">Deletar</button></td>
         </tr>
