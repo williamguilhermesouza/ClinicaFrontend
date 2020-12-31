@@ -12,6 +12,7 @@ import { PacientesService } from 'src/services/pacientes.service';
 })
 export class HomeComponent implements OnInit {
   options: string[];
+  pacienteData$: Observable<Paciente[]>;
 
   constructor(
     private router: Router,
@@ -22,13 +23,14 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(paciente: string): void {
-      let pacienteData$: Observable<Paciente[]>;
-      pacienteData$ = this.pacientesService.getPacientesByName(paciente);
-      if (pacienteData$[0]) {
-          this.router.navigateByUrl('/new', { state: pacienteData$[0]});
-      } else {
-          alert(`Paciente ${paciente} não encontrado!`);
-      }
+      this.pacienteData$ = this.pacientesService.getPacientesByName(paciente);
+      this.pacienteData$.subscribe( data => {
+          if (data[0]) {
+              this.router.navigateByUrl('/new', { state: data[0]});
+          } else {
+              alert(`Paciente ${paciente} não encontrado!`);
+          }
+      });
   }
 
   onPress(paciente: string): void {
