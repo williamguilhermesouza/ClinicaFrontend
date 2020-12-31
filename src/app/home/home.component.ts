@@ -34,13 +34,15 @@ export class HomeComponent implements OnInit {
   }
 
   onPress(paciente: string): void {
-      let pacienteData$: Observable<Paciente[]>;
-      pacienteData$ = this.pacientesService.getPacientes();
-      if (pacienteData$) {
-        pacienteData$.subscribe(data => {
-            console.log(data);
+      this.pacienteData$ = this.pacientesService.getPacientes();
+      this.options = [];
+      this.pacienteData$.subscribe(data => {
+            for (const item of data) {
+                if (item.nome.includes(paciente)) {
+                    this.options = [...this.options, item.nome];
+                }
+            }
         });
-      }
   }
 
 
