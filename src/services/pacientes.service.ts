@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
@@ -26,7 +26,7 @@ export class PacientesService {
   }
 
   deletePaciente(id: number): void {
-      this.http.delete(`${this.Backend}pacientes/${id}`);
+      this.http.delete(`${this.Backend}pacientes/${id}`).subscribe(data => console.log(data));
   }
 
   updatePaciente(id: number): Observable<Paciente> {
@@ -34,4 +34,3 @@ export class PacientesService {
   }
 }
 
-    
