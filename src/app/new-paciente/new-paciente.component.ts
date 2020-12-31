@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { Paciente } from 'src/models/paciente.model';
 import { PacientesService } from 'src/services/pacientes.service';
 
 
@@ -36,6 +38,7 @@ export class NewPacienteComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private pacientesService: PacientesService,
   ) {
     const state = this.router.getCurrentNavigation().extras.state;
     if (state) {
@@ -73,8 +76,8 @@ export class NewPacienteComponent implements OnInit {
   }
 
   onSubmit(form: any): void {
-    const paciente = form.value;
-//    PacientesService.post('/pacientes/create', paciente).then(res => console.log(res.data));
+    const paciente: Paciente = form.value;
+    this.pacientesService.createPaciente(paciente).subscribe(res => console.log(res));
     alert(`Paciente ${paciente.nome} Cadastrado com id ${paciente.id}`);
   }
 
