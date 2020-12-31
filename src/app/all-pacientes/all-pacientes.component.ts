@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import PacientesService from 'src/services/pacientes.service';
+import { PacientesService } from 'src/services/pacientes.service';
 import { Paciente } from '../../models/paciente.model';
 
 @Component({
@@ -16,27 +16,27 @@ export class AllPacientesComponent implements OnInit {
   }
 
   pacienteDelete(id: number): void {
-    PacientesService.delete(`/pacientes/${id}`);
+//    PacientesService.delete(`/pacientes/${id}`);
     alert(`Paciente ${id} deletado.`);
   }
 
   async updatePaciente(id: number): Promise<void> {
-    const res = await PacientesService.get(`/pacientes/${id}`);
-    const paciente = res.data;
-    this.router.navigateByUrl('/new', { state: paciente });
+//    const res = await PacientesService.get(`/pacientes/${id}`);
+//    const paciente = res.data;
+//    this.router.navigateByUrl('/new', { state: paciente });
   }
 
   constructor(
     private router: Router,
   ) {
-    PacientesService.get('/pacientes').then(res => {
-        const pacientes: any = res.data;
-        for (const paciente of pacientes) {
-            const nascimento = new Date(paciente.nascimento);
-            paciente.nascimento = `${nascimento.getDate() + 1}/${nascimento.getMonth() + 1}/${nascimento.getFullYear()}`;
-        }
-        this.setPacientes(pacientes);
-    });
+  //  PacientesService.get('/pacientes').then(res => {
+  //      const pacientes: any = res.data;
+  //      for (const paciente of pacientes) {
+  //          const nascimento = new Date(paciente.nascimento);
+  //          paciente.nascimento = `${nascimento.getDate() + 1}/${nascimento.getMonth() + 1}/${nascimento.getFullYear()}`;
+  //      }
+  //      this.setPacientes(pacientes);
+  //  });
    }
 
   ngOnInit(): void {

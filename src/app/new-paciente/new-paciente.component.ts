@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import PacientesService from 'src/services/pacientes.service';
+import { PacientesService } from 'src/services/pacientes.service';
 
 
 @Component({
@@ -74,7 +74,7 @@ export class NewPacienteComponent implements OnInit {
 
   onSubmit(form: any): void {
     const paciente = form.value;
-    PacientesService.post('/pacientes/create', paciente).then(res => console.log(res.data));
+//    PacientesService.post('/pacientes/create', paciente).then(res => console.log(res.data));
     alert(`Paciente ${paciente.nome} Cadastrado com id ${paciente.id}`);
   }
 

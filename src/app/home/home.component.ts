@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Paciente } from 'src/models/paciente.model';
 
-import PacientesService from 'src/services/pacientes.service';
+import { PacientesService } from 'src/services/pacientes.service';
 
 @Component({
   selector: 'app-home',
@@ -9,39 +11,35 @@ import PacientesService from 'src/services/pacientes.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  options: string[] = [];
+  options: string[];
 
   constructor(
     private router: Router,
+    private pacientesService: PacientesService,
   ) { }
 
   ngOnInit(): void {
   }
 
-  async onSubmit(paciente: string): Promise<any> {
-      let pacienteData: any;
-      await PacientesService.post('/pacientes/findbyname', {nome: paciente}).then(res => {pacienteData = res.data; });
-      if (pacienteData[0]) {
-          this.router.navigateByUrl('/new', { state: pacienteData[0]});
+  onSubmit(paciente: string): void {
+      let pacienteData$: Observable<Paciente[]>;
+      pacienteData$ = this.pacientesService.getPacientesByName(paciente);
+      if (pacienteData$[0]) {
+          this.router.navigateByUrl('/new', { state: pacienteData$[0]});
       } else {
           alert(`Paciente ${paciente} não encontrado!`);
       }
   }
 
-  async onPress(paciente: string): Promise<any> {
-      let pacienteData: any;
-      await PacientesService.get('/pacientes').then(res => {pacienteData = res.data; });
-      this.options = [];
-      if (pacienteData) {
-          for (let i = 0; i <= pacienteData.length; i++) {
-              if (pacienteData[i]) {
-                  if (pacienteData[i].nome.includes(paciente)) {
-                    this.options = [...this.options, pacienteData[i].nome];
-                  }
-              }
-          }
+  onPress(paciente: string): void {
+      let pacienteData$: Observable<Paciente[]>;
+      pacienteData$ = this.pacientesService.getPacientes();
+      if (pacienteData$) {
+        pacienteData$.subscribe(data => {
+            console.log(data);
+        });
       }
-   }
+  }
 
 
 }
