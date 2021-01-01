@@ -28,6 +28,7 @@ export class AllPacientesComponent implements OnInit {
         // this.router.navigateByUrl('/new', {state: paciente });
         const dialogRef = this.dialog.open( NewPacienteComponent, {
             width: '1000px',
+            height: '1000px',
         });
     });
   }
