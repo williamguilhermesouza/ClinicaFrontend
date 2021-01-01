@@ -14,6 +14,7 @@ import { AllPacientesComponent } from './all-pacientes/all-pacientes.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HomeModule} from './home/home.module';
 import {AllPacientesModule} from './all-pacientes/all-pacientes.module';
+import {NewPacienteModule} from './new-paciente/new-paciente.module';
 
 
 
@@ -22,7 +23,6 @@ import {AllPacientesModule} from './all-pacientes/all-pacientes.module';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NewPacienteComponent,
   ],
 
   imports: [
@@ -30,6 +30,7 @@ import {AllPacientesModule} from './all-pacientes/all-pacientes.module';
     FormsModule,
     HomeModule,
     AllPacientesModule,
+    NewPacienteModule,
     HttpClientModule,
     RouterModule.forRoot([
     { path: '', component: HomeComponent },

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialogRef} from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 import { Paciente } from 'src/models/paciente.model';
 import { PacientesService } from 'src/services/pacientes.service';
+import {AllPacientesComponent} from '../all-pacientes/all-pacientes.component';
 
 
 @Component({
