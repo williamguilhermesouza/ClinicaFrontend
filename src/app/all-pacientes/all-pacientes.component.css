@@ -1,16 +1,19 @@
 .all-pacientes {
     display: flex;
-    margin: 250px;
+    margin: 100px 50px 250px 50px;
 }
 
 .pacientes-table {
     border: 1px solid black;
     width: 100%;
     text-align: center;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
 }
 
 .header-cell {
     border: 1px solid black;
+    background-color: #DDD;
 }
 
 td {
