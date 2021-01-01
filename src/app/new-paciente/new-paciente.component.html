@@ -1,20 +1,42 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="new" >
     <div class="name">
-        <label for="ID">Id:</label><input type="number" id="ID" name="id" [(ngModel)]="ID" />
-        <label for="name">Nome:</label><input type="text" id="name" name="nome" [(ngModel)]="nome"/>
-        <label for="sex">Sexo:</label><input type="text" id="sex" name="sexo" [(ngModel)]="sexo"/>
-        <label for="ecivil">Estado Civil:</label><input type="text" name="estadocivil" [(ngModel)]="estadocivil"/>
+        <div class="float-input">
+            <label for="ID">Id:</label><input type="number" id="ID" name="id" [(ngModel)]="ID" />
+        </div>
+        <div class="float-input">
+            <label for="name">Nome:</label><input type="text" id="name" name="nome" [(ngModel)]="nome"/>
+        </div>
+        <div class="float-input">
+            <label for="sex">Sexo:</label><input type="text" id="sex" name="sexo" [(ngModel)]="sexo"/>
+        </div>
+        <div class="float-input">
+            <label for="ecivil">Estado Civil:</label><input type="text" name="estadocivil" [(ngModel)]="estadocivil"/>
+        </div>
     </div>
     <div class="email">
-        <label for="email">E-mail</label><input type="email" id="email" name="email" [(ngModel)]="email"/>
-        <label for="address">Endereço</label><input type="text" id="address" name="endereco" [(ngModel)]="endereco"/>
+        <div class="float-input">
+            <label for="email">E-mail</label><input type="email" id="email" name="email" [(ngModel)]="email"/>
+        </div>
+        <div class="float-input">
+            <label for="address">Endereço</label><input type="text" id="address" name="endereco" [(ngModel)]="endereco"/>
+        </div>
     </div>
     <div class="date">
-        <label for="date">Data de Nascimento:</label><input type="date" id="date" name="nascimento" [(ngModel)]="nascimento"/>
-        <label for="occupation">Profissão:</label><input type="text" id="occupation" name="profissao" [(ngModel)]="profissao"/>
-        <label for="phone">Telefone:</label><input type="phone" id="phone" name="telefone" [(ngModel)]="telefone"/>
-        <label for="weight">Peso:</label><input type="number" id="weight" name="peso" [(ngModel)]="peso"/>
-        <label for ="height">Altura:</label><input type="number" id="height" name="altura" [(ngModel)]="altura"/>
+        <div class="float-input">
+            <label for="date">Data de Nascimento:</label><input type="date" id="date" name="nascimento" [(ngModel)]="nascimento"/>
+        </div>
+        <div class="float-input">
+            <label for="occupation">Profissão:</label><input type="text" id="occupation" name="profissao" [(ngModel)]="profissao"/>
+        </div>
+        <div class="float-input">
+            <label for="phone">Telefone:</label><input type="phone" id="phone" name="telefone" [(ngModel)]="telefone"/>
+        </div>
+        <div class="float-input">
+            <label for="weight">Peso:</label><input type="number" id="weight" name="peso" [(ngModel)]="peso"/>
+        </div>
+        <div class="float-input">
+            <label for ="height">Altura:</label><input type="number" id="height" name="altura" [(ngModel)]="altura"/>
+        </div>
     </div>
     <div class="complaints">
         <label for="complain">Queixa:</label><textarea type="text" id="complain" name="queixa" [(ngModel)]="queixa"></textarea>
@@ -27,13 +49,21 @@
         <label for="state">Estado:</label><textarea type="text" id="state" name="estado" [(ngModel)]="estado"></textarea>
     </div>
     <div class="measure">
-        <label for="pa">PA:</label><input type="number" id="pa" name="pa" [(ngModel)]="pa"/>
-        <label for="fc">FC:</label><input type="number" id="fc" name="fc" [(ngModel)]="fc"/>
-        <label for="fr">FR:</label><input type="number" id="fr" name="fr" [(ngModel)]="fr"/>
-        <label for="sp">SPO2:</label><input type="number" id="sp" name="sp" [(ngModel)]="sp"/>
+        <div class="float-input">
+            <label for="pa">PA:</label><input type="number" id="pa" name="pa" [(ngModel)]="pa"/>
+        </div>
+        <div class="float-input">
+            <label for="fc">FC:</label><input type="number" id="fc" name="fc" [(ngModel)]="fc"/>
+        </div>
+        <div class="float-input">
+            <label for="fr">FR:</label><input type="number" id="fr" name="fr" [(ngModel)]="fr"/>
+        </div>
+        <div class="float-input">
+            <label for="sp">SPO2:</label><input type="number" id="sp" name="sp" [(ngModel)]="sp"/>
+        </div>
         <br />
-        <label for="obs">Observação:</label><br /><textarea type="text" id="obs" name="observacao" [(ngModel)]="observacao"></textarea>
     </div>
+    <label for="obs">Observação:</label><br /><textarea type="text" id="obs" name="observacao" [(ngModel)]="observacao"></textarea>
     <div class="buttons">
         <button type="submit" id="btn-save">Salvar</button>
         <button id="btn-clean" type="reset">Limpar</button>

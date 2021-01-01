@@ -40,7 +40,7 @@ export class NewPacienteComponent implements OnInit {
     private router: Router,
     private pacientesService: PacientesService,
   ) {
-    let state;
+    let state: any;
     if (this.router.getCurrentNavigation()) {
         state = this.router.getCurrentNavigation().extras.state;
     }

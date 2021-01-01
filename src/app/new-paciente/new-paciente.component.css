@@ -6,8 +6,15 @@
 }
 
 .new .name input {
-    margin: 10px;
-    border-radius: 10px;
+    margin-right: 10px;
+}
+
+input, label {
+    display: block;
+}
+
+.float-input {
+    float: left;
 }
 
 #ID {
@@ -16,12 +23,10 @@
 
 .new .name #sex {
     width: 20px;
-    border-radius: 5px;
 }
 
 .email input {
-    margin: 10px;
-    border-radius: 10px;
+    margin-right: 10px;
 }
 
 #email {
@@ -37,8 +42,7 @@
 }
 
 .date input {
-    margin: 0 10px 0 10px;
-    border-radius: 10px;
+    margin: 0 10px 0 0;
 }
 
 #weight, #height {
@@ -52,18 +56,19 @@
 }
 
 .complaints textarea {
-    border-radius: 10px;
     height: 100px;
 }
 
 .measure input {
-    margin: 20px 10px 10px 20px;
-    border-radius: 10px;
+    margin: 0 10px 10px 0;
     width: 50px;
 }
 
+.measure label {
+    margin-top: 10px;
+}
+
 #obs {
-    border-radius: 10px;
     height: 100px;
     width: 900px;
 }
@@ -76,7 +81,6 @@
     margin: 20px;
     height: 25px;
     width: 70px;
-    border-radius: 5px;
 
 }
 
