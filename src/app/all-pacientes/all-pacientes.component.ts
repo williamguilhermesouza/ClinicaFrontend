@@ -27,7 +27,7 @@ export class AllPacientesComponent implements OnInit {
         paciente.nascimento = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
         // this.router.navigateByUrl('/new', {state: paciente });
         const dialogRef = this.dialog.open( NewPacienteComponent, {
-            width: '500px',
+            width: '1000px',
         });
     });
   }

@@ -6,7 +6,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
-  declarations: [AllPacientesComponent],
+  declarations: [
+      AllPacientesComponent,
+  ],
   imports: [
     CommonModule,
     MatDialogModule,
