@@ -5,7 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { PacientesService } from 'src/services/pacientes.service';
 import { Paciente } from '../../models/paciente.model';
-import {NewPacienteComponent} from '../new-paciente/new-paciente.component';
+import { NewPacienteModalComponent } from './new-paciente-modal/new-paciente-modal.component';
 
 @Component({
   selector: 'app-all-pacientes',
@@ -26,7 +26,7 @@ export class AllPacientesComponent implements OnInit {
         const date = new Date(paciente.nascimento);
         paciente.nascimento = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
         // this.router.navigateByUrl('/new', {state: paciente });
-        const dialogRef = this.dialog.open( NewPacienteComponent, {
+        const dialogRef = this.dialog.open( NewPacienteModalComponent, {
             width: '1000px',
             height: '1000px',
         });
