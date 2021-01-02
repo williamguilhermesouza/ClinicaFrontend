@@ -14,6 +14,7 @@ import { NewPacienteModalComponent } from './new-paciente-modal/new-paciente-mod
 })
 export class AllPacientesComponent implements OnInit {
   pacientes$: Observable<Paciente[]>;
+  displayedColumns: string[] = ['id', 'nome', 'sexo', 'tel', 'email', 'editar', 'progressao', 'excluir'];
 
 
   pacienteDelete(id: number): void {
