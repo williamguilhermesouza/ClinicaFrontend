@@ -19,4 +19,8 @@ export class NewPacienteModalComponent implements OnInit {
       console.log(this.state);
   }
 
+  onClose(): void {
+      this.dialogRef.close();
+  }
+
 }
