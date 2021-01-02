@@ -20,6 +20,8 @@ export class NewPacienteModalComponent implements OnInit {
   }
 
   onClose(): void {
+      const btn = document.getElementById('close-btn');
+      btn.style.display = 'none';
       this.dialogRef.close();
   }
 
