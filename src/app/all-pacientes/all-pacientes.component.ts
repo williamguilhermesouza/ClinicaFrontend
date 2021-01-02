@@ -29,6 +29,7 @@ export class AllPacientesComponent implements OnInit {
         const dialogRef = this.dialog.open( NewPacienteModalComponent, {
             width: '1000px',
             height: '1000px',
+            data: paciente,
         });
     });
   }

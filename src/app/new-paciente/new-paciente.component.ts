@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Paciente } from 'src/models/paciente.model';
@@ -35,18 +35,18 @@ export class NewPacienteComponent implements OnInit {
   fr: number;
   sp: number;
   observacao: string;
+  @Input() state: any;
 
   constructor(
     private router: Router,
     private pacientesService: PacientesService,
   ) {
-    let state: any;
     if (this.router.getCurrentNavigation()) {
-        state = this.router.getCurrentNavigation().extras.state;
+        this.state = this.router.getCurrentNavigation().extras.state;
     }
-    if (state) {
-      console.log(state);
-      const paciente = state;
+    if (this.state) {
+      console.log(this.state);
+      const paciente = this.state;
       this.ID = paciente.id;
       this.nome = paciente.nome;
       this.sexo = paciente.sexo;
@@ -73,9 +73,41 @@ export class NewPacienteComponent implements OnInit {
       this.sp = paciente.sp;
       this.observacao = paciente.observacao;
     }
-   }
+  }
 
   ngOnInit(): void {
+    if (this.router.getCurrentNavigation()) {
+        this.state = this.router.getCurrentNavigation().extras.state;
+    }
+    if (this.state) {
+      console.log(this.state);
+      const paciente = this.state;
+      this.ID = paciente.id;
+      this.nome = paciente.nome;
+      this.sexo = paciente.sexo;
+      this.estadocivil = paciente.estadocivil;
+      this.email = paciente.email;
+      this.endereco = paciente.endereco;
+      const date = new Date(paciente.nascimento);
+      this.nascimento = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate() + 1 }`;
+      this.profissao = paciente.profissao;
+      this.telefone = paciente.telefone;
+      this.peso = paciente.peso;
+      this.altura = paciente.altura;
+      this.queixa = paciente.queixa;
+      this.doencaatual = paciente.doencaatual;
+      this.doencapre = paciente.doencapre;
+      this.doencaassoc = paciente.doencaassoc;
+      this.historia = paciente.historia;
+      this.habitos = paciente.habitos;
+      this.medicacoes = paciente.medicacoes;
+      this.estado = paciente.estado;
+      this.pa = paciente.pa;
+      this.fc = paciente.fc;
+      this.fr = paciente.fr;
+      this.sp = paciente.sp;
+      this.observacao = paciente.observacao;
+    }
   }
 
   onSubmit(form: any): void {
