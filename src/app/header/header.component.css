@@ -1,18 +1,17 @@
 nav {
     position: absolute;
-    top: 5px;
-    right: 20px;
+    display: flex;
+    width: 100%;
+    padding-top: 5px;
+    justify-content: flex-end;
+    background-color: #1ab0a5;
 }
 
 nav a {
-    margin-left: 10px;
+    margin-right: 20px;
     text-decoration: none;
     text-shadow: 2px;
     transition: 2s;
-}
-
-nav a:hover {
-    color: #777;
 }
 
 nav a:visited {
