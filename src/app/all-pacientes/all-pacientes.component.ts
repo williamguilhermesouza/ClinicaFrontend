@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
+import { MatButton } from '@angular/material/button';
 
 import { Observable } from 'rxjs';
 import { PacientesService } from 'src/services/pacientes.service';
@@ -14,8 +15,12 @@ import { NewPacienteModalComponent } from './new-paciente-modal/new-paciente-mod
 })
 export class AllPacientesComponent implements OnInit {
   pacientes$: Observable<Paciente[]>;
-  displayedColumns: string[] = ['id', 'nome', 'sexo', 'tel', 'email', 'editar', 'progressao', 'excluir'];
+  displayedColumns: string[] = ['id', 'nome', 'sexo', 'tel', 'email'];
+  selected: number = -1;
 
+  setSelected(id: number): void {
+    this.selected = id;
+  }
 
   pacienteDelete(id: number): void {
     this.pacientesService.deletePaciente(id);

@@ -4,6 +4,7 @@ import {AllPacientesComponent} from './all-pacientes.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
 
 import {NewPacienteModule} from '../new-paciente/new-paciente.module';
 import { NewPacienteModalComponent } from './new-paciente-modal/new-paciente-modal.component';
@@ -20,6 +21,7 @@ import { NewPacienteModalComponent } from './new-paciente-modal/new-paciente-mod
     MatDialogModule,
     MatIconModule,
     MatTableModule,
+    MatButtonModule,
     NewPacienteModule,
   ]
 })

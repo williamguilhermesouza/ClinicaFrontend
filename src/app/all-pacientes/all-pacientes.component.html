@@ -2,37 +2,30 @@
     <table mat-table [dataSource]="pacientes$ | async" class="pacientes-table">
         <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef>Id</th>
-            <td mat-cell *matCellDef="let paciente">{{paciente.id}}</td>
+            <td mat-cell *matCellDef="let paciente"(click)='setSelected(paciente.id);' style="background-color: {{paciente.id == selected ? '#1ab0a5' : ''}}">{{paciente.id}} </td>
         </ng-container>
         <ng-container matColumnDef="nome">
             <th mat-header-cell *matHeaderCellDef>Nome</th>
-            <td mat-cell *matCellDef="let paciente">{{paciente.nome}}</td>
+            <td mat-cell *matCellDef="let paciente"(click)='setSelected(paciente.id);' style="background-color: {{paciente.id == selected ? '#1ab0a5' : ''}}">{{paciente.nome}}</td>
         </ng-container>
         <ng-container matColumnDef="sexo">
             <th mat-header-cell *matHeaderCellDef>Sexo</th>
-            <td mat-cell *matCellDef="let paciente">{{paciente.sexo}}</td>
+            <td mat-cell *matCellDef="let paciente"(click)='setSelected(paciente.id);' style="background-color: {{paciente.id == selected ? '#1ab0a5' : ''}}">{{paciente.sexo}}</td>
         </ng-container>
         <ng-container matColumnDef="tel">
             <th mat-header-cell *matHeaderCellDef>Telefone</th>
-            <td mat-cell *matCellDef="let paciente">{{paciente.telefone}}</td>
+            <td mat-cell *matCellDef="let paciente"(click)='setSelected(paciente.id);' style="background-color: {{paciente.id == selected ? '#1ab0a5' : ''}}">{{paciente.telefone}}</td>
         </ng-container>
         <ng-container matColumnDef="email">
             <th mat-header-cell *matHeaderCellDef>E-mail</th>
-            <td mat-cell *matCellDef="let paciente">{{paciente.email}}</td>
-        </ng-container>
-        <ng-container matColumnDef="editar">
-            <th mat-header-cell *matHeaderCellDef> </th>
-            <td mat-cell *matCellDef="let paciente"><button (click)="updatePaciente(paciente.id)">Editar</button></td>
-        </ng-container>
-        <ng-container matColumnDef="progressao">
-            <th mat-header-cell *matHeaderCellDef> </th>
-            <td mat-cell *matCellDef="let paciente"><button >Evoluir</button></td>
-        </ng-container>
-        <ng-container matColumnDef="excluir">
-            <th mat-header-cell *matHeaderCellDef> </th>
-            <td mat-cell *matCellDef="let paciente"><button (click)="pacienteDelete(paciente.id)">Excluir</button></td>
+            <td mat-cell *matCellDef="let paciente"(click)='setSelected(paciente.id);' style="background-color: {{paciente.id == selected ? '#1ab0a5' : ''}}">{{paciente.email}}</td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>        
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"  ></tr>
     </table>
+    <div id="controls">
+      <button mat-raised-button color="primary" id="editButton" (click)="updatePaciente(selected)">Editar</button>
+      <button mat-raised-button color="accent" id="editButton">Evoluir</button>
+      <button mat-raised-button color="warn" id="editButton"(click)='pacienteDelete(selected);'>Excluir</button>
+
 </div>

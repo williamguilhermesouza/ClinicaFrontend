@@ -9,3 +9,12 @@
 th {
     font-size: 11pt;
 }
+
+#controls {
+  margin-top: 80px;
+
+}
+
+#controls button {
+  margin-right: 30px;
+}
