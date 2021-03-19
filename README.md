@@ -1,4 +1,8 @@
 # Clinica Frontend
+![GitHub](https://img.shields.io/github/license/williamguilhermesouza/ClinicaFrontend)
+![Repo-size](https://img.shields.io/github/repo-size/williamguilhermesouza/ClinicaFrontend)
+![Last-commit](https://img.shields.io/github/last-commit/williamguilhermesouza/ClinicaFrontend)
+
 This project means to be the frontend of a web app that register patients in a phisiotheraphy clinic. The app includes basic register of the patient, CRUD operations, search, and the works on patients evolutions.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
