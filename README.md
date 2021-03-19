@@ -1,4 +1,5 @@
-# ClinicaFrontend
+# Clinica Frontend
+This project means to be the frontend of a web app that register patients in a phisiotheraphy clinic. The app includes basic register of the patient, CRUD operations, search, and the works on patients evolutions.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
