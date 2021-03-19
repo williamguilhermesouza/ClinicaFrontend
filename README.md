@@ -1,5 +1,5 @@
 # Clinica Frontend
-![GitHub](https://img.shields.io/github/license/williamguilhermesouza/ClinicaFrontend)
+
 ![Repo-size](https://img.shields.io/github/repo-size/williamguilhermesouza/ClinicaFrontend)
 ![Last-commit](https://img.shields.io/github/last-commit/williamguilhermesouza/ClinicaFrontend)
 
